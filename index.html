@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+    <div ng-app="firstApp" ng-controller="myCtrl">
+  <p>First Name  : <input type="text" ng-model="firstName"></p>
+  <p>Second Name : <input type="text" ng-model="secondName"></p>
+  
+  <h1>Hello {{firstName + " " + secondName }}</h1>
+</div>
+<script>
+var app = angular.module('firstApp',[]);
+app.controller('myCtrl', function($scope){
+   $scope.firstName = "Abhay"; 
+   $scope.secondName = "Pandey"; 
+});
+    
+</script>
+</body>
+
+</html>
