@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div ng-app="invoice" ng-controller ="InvoiceController as invoice">
+            <b>Invoice</b>
+            <div>
+                Quantity : <input type="number" min="0" ng-model="invoice.qty" required>
+            </div>
+            <div>
+                cost : <input type="number" min="10" ng-model="invoice.cost">
+                <select ng-model="invoice.inCurr">
+                    <option ng-repeat="c in invoice.currencies">{{c}}</option>
+                </select>
+            </div>
+            <b>Total</b>
+           <span ng-repeat="c in invoice.currencies">
+                {{invoice.total(c) | currency:c}}
+              </span><br></br>
+            <button class="btn" ng-click="invoice.pay()">Pay</button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

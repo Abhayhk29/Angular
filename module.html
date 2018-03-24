@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Angular Module Practice && directive</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>    
+    </head>
+    <body>
+        <div ng-app="testModule" ng-controller="testController">
+            {{ india + " " + world }}
+        </div>
+        <div>TODO write content</div>
+        <script>
+            var app = angular.module("testModule",[]);
+            app.controller("testController", function($scope){
+                $scope.india = "India";
+                $scope.world = " is the best Country In the World";
+            });
+        </script>
+    </body>
+</html>
