@@ -14,6 +14,10 @@ and open the template in the editor.
   <p>Second Name : <input type="text" ng-model="secondName"></p>
   
   <h1>Hello {{firstName + " " + secondName }}</h1>
+  <div>
+      <button onclick="myFunction()">Try it</button>
+      <p id="demo"></p>
+  </div>
 </div>
 <script>
 var app = angular.module('firstApp',[]);
@@ -21,7 +25,12 @@ app.controller('myCtrl', function($scope){
    $scope.firstName = "Abhay"; 
    $scope.secondName = "Pandey"; 
 });
-    
+var names = ['Krishna','Madhav', 'Madan Mohan','Ras bihari', 'jagarnath', 'ram'];
+document.getElementById.innerHtml = names;
+function myFunction() {
+    names.shift();
+    document.getElementById("demo").innerHTML = names;
+}
 </script>
 </body>
 
